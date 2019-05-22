@@ -11,17 +11,51 @@ package lambda;
  */
 public class Request {
 
-    int calcs;
+    int numfiles;
+    String fileops;
+    int numfileops;
+    String optype;
+    String nodelete;
     int sleep;
-    int loops;
-   
-    public int getCalcs()
+
+    public int getNumfiles(){
+        return numfiles;
+    } 
+    public void setNumfiles(int numfiles)
     {
-        return calcs;
+        this.numfiles = numfiles;
     }
-    public void setCalcs(int calcs)
+    public int getNumfileops()
     {
-        this.calcs = calcs;
+        return numfileops;
+    }
+    public void setNumfileops(int numfileops)
+    {
+        this.numfileops = numfileops;
+    }
+    public String getFileops()
+    {
+        return fileops;
+    }
+    public void setFileops(String fileops)
+    {
+        this.fileops = fileops;
+    }
+    public String getOptype()
+    {
+        return optype;
+    }
+    public void setOptype(String optype)
+    {
+        this.optype = optype;
+    }
+    public String getNodelete()
+    {
+        return nodelete;
+    }
+    public void setNodelete(String nodelete)
+    {
+        this.nodelete = nodelete;
     }
     public int getSleep()
     {
@@ -31,19 +65,15 @@ public class Request {
     {
         this.sleep = sleep;
     }
-    public int getLoops()
+    public Request(int numfiles, String fileops, int numfileops, String optype, 
+            String nodelete, int sleep)
     {
-        return loops;
-    }
-    public void setLoops(int loops)
-    {
-        this.loops = loops;
-    }
-    public Request(int calcs, int sleep, int loops)
-    {
-        this.calcs = calcs;
+        this.numfiles = numfiles;
+        this.fileops = fileops;
+        this.numfileops = numfileops;
+        this.optype = optype;
+        this.nodelete = nodelete;
         this.sleep = sleep;
-        this.loops = loops;
     }
     public Request()
     {
