@@ -230,12 +230,12 @@ public class IO implements RequestHandler<Request, Response>
             filename = "/tmp/" + filename;
             File file = new File(filename); 
             long len = file.length();
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(filename));  
-                for(int j = 0; j < numfileops; j++) {
+            try {                
+                for(int j = 0; j < numfileops; j++) { 
                     System.out.println("Reading: " + filename + " now...");                    
                     if(optype.equals("L")) {
                         String line="";
+                        BufferedReader reader = new BufferedReader(new FileReader(filename));
                         Random r = new Random();
                         int index = r.nextInt(numfileops);                        
                         while(index != 0){
@@ -245,6 +245,7 @@ public class IO implements RequestHandler<Request, Response>
                         line = reader.readLine();
                         reader.close();
                     }else if(optype.equals("B")){
+                        BufferedReader reader = new BufferedReader(new FileReader(filename)); 
                         Random r = new Random();
                         long randomNum = (long)(r.nextDouble()*len);
                         int c = 0;
